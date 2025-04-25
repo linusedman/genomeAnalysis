@@ -2,7 +2,7 @@
 #SBATCH -A uppmax2025-2-288
 #SBATCH -M snowy
 #SBATCH -p core
-#SBATCH -n 4
+#SBATCH -n 16
 #SBATCH -J canu_pacbio_run
 #SBATCH -t 06:00:00
 #SBATCH --mail-user=linus.edman.8474@student.uu.se
@@ -14,8 +14,8 @@ module load canu/2.2
 
 # === CONFIGURATION VARIABLES ===
 export SRCDIR=/home/edman/genomeAnalysis/data/raw_data/pacBio
-export RESULT_DIR=/home/edman/genomeAnalysis/analyses/02_assembly/pacBio
-export FASTA_DEST=/home/edman/genomeAnalysis/data/assembly_data
+export RESULT_DIR=/home/edman/genomeAnalysis/analyses/02_assembly/pacBio/run2
+export FASTA_DEST=/home/edman/genomeAnalysis/data/assembly_data/pacBio/run2
 
 # Copying input files (fastq.gz) to local temp storage
 cp $SRCDIR/*.fastq.gz $SNIC_TMP/
@@ -27,7 +27,7 @@ cd $SNIC_TMP || exit 1
 gunzip *.fastq.gz
 
 # Running Canu
-canu -p assembly -d canu_run genomeSize=3.5m -pacbio *.fastq useGrid=false maxThreads=4
+canu -p assembly -d canu_run genomeSize=3.1m -pacbio *.fastq useGrid=false maxThreads=16
 
 # === Post-processing ===
 
