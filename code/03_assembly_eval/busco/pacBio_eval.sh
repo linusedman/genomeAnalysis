@@ -11,19 +11,16 @@
 # Load modules
 module load bioinfo-tools BUSCO/5.7.1
 
-# Setup AUGUSTUS config in SNIC_TMP
-export AUGUSTUS_CONFIG_PATH="$SNIC_TMP/augustus_config"
-mkdir -p "$AUGUSTUS_CONFIG_PATH"
-cp -r "$AUGUSTUS_CONFIG_COPY_DIR"/* "$AUGUSTUS_CONFIG_PATH"
+# Set up Augustus config
+source $AUGUSTUS_CONFIG_COPY
 
-# Configuration
-export ASSEMBLY_FILE=/home/edman/genomeAnalysis/data/assembly_data/pacBio/run2/assembly.contigs.fasta.gz
-export RESULT_DIR=/home/edman/genomeAnalysis/analyses/03_assembly_eval/pacBio/run2/busco
-export LINEAGE=$BUSCO_LINEAGE_SETS/lactobacillales_odb10
+# Define paths
+ASSEMBLY_FILE=/home/edman/genomeAnalysis/data/assembly_data/pacBio/run2/assembly.contigs.fasta.gz
+RESULT_DIR=/home/edman/genomeAnalysis/analyses/03_assembly_eval/pacBio/run2/busco
+LINEAGE=$BUSCO_LINEAGE_SETS/lactobacillales_odb10
 
+# Prepare output and temp dirs
 mkdir -p "$RESULT_DIR"
-
-# Copy input to SNIC_TMP
 cp "$ASSEMBLY_FILE" "$SNIC_TMP/"
 cd "$SNIC_TMP" || exit 1
 
@@ -32,11 +29,13 @@ ASSEMBLY_BASENAME=$(basename "$ASSEMBLY_FILE")
 gunzip -f "$ASSEMBLY_BASENAME"
 UNCOMPRESSED_ASSEMBLY="${ASSEMBLY_BASENAME%.gz}"
 
-# Run BUSCO
+# Run BUSCO with offline mode enabled
 busco -i "$UNCOMPRESSED_ASSEMBLY" \
       -o busco_output \
       -m genome \
       -l "$LINEAGE" \
-      --cpu 8 \
+      -f \
+      --offline \
+      --cpu 16 \
       --out_path "$RESULT_DIR"
 

@@ -1,5 +1,6 @@
 analyses/
 data/
+augustus_config/
 
 slurm-*.out
 
