@@ -1,5 +1,5 @@
 #!/bin/bash
-#SBATCH -A uppmax2025-2-288
+#SBATCH -A uppmax2025-3-3
 #SBATCH -M snowy
 #SBATCH -p core
 #SBATCH -n 4
@@ -10,9 +10,9 @@
 
 module load bioinfo-tools quast/5.0.2
 
-# === CONFIGURATION VARIABLES ===
+# CONFIGURATION VARIABLES
 export ASSEMBLY_FILE=/home/edman/genomeAnalysis/data/assembly_data/hybrid/no_trim/contigs.fasta.gz
-export RESULT_DIR=/home/edman/genomeAnalysis/analyses/03_assembly_eval/hybrid/no_trim
+export RESULT_DIR=/home/edman/genomeAnalysis/analyses/03_assembly_eval/hybrid/no_trim/quast
 mkdir -p "$RESULT_DIR"
 
 # Copying the input file to local temporary storage

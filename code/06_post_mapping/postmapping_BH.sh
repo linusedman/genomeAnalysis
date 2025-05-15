@@ -1,5 +1,5 @@
 #!/bin/bash
-#SBATCH -A uppmax2025-2-288
+#SBATCH -A uppmax2025-3-3
 #SBATCH -M snowy
 #SBATCH -p core
 #SBATCH -n 4
@@ -10,7 +10,7 @@
 
 module load bioinfo-tools bwa/0.7.18 samtools/1.20
 
-# === CONFIGURATION ===
+# CONFIGURATION VARIABLES
 ASSEMBLY_GZ=/home/edman/genomeAnalysis/data/assembly_data/pacBio/run2/assembly.contigs.fasta.gz
 READS_DIR=/home/edman/genomeAnalysis/data/raw_data/illumina/RNA/seq_BH
 OUT_DIR=/home/edman/genomeAnalysis/analyses/06_post_mapping/BH
@@ -24,7 +24,7 @@ ASSEMBLY=${ASSEMBLY_GZ##*/}  # get filename
 ASSEMBLY="${ASSEMBLY%.gz}"   # remove .gz
 bwa index "$ASSEMBLY"
 
-# === Sample List ===
+# Sample List
 SAMPLES=(ERR1797972 ERR1797973 ERR1797974)
 
 for SAMPLE in "${SAMPLES[@]}"; do

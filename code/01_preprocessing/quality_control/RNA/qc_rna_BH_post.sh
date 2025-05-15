@@ -12,8 +12,8 @@
 module load bioinfo-tools FastQC/0.11.9
 
 # === CONFIGURATION VARIABLES ===
-export SRCDIR=/home/edman/genomeAnalysis/data/illumina/RNA/seq_BH
-export RESULT_DIR=/home/edman/genomeAnalysis/analyses/01_preprocessing/rna/pre_trim/BH
+export SRCDIR=/home/edman/genomeAnalysis/data/trimmed_data/rna/BH
+export RESULT_DIR=/home/edman/genomeAnalysis/analyses/01_preprocessing/rna/post_trim/BH
 mkdir -p "$RESULT_DIR"
 
 # Copying compressed FASTQ files to local temporary storage

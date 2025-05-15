@@ -1,18 +1,18 @@
 #!/bin/bash
-#SBATCH -A uppmax2025-2-288
+#SBATCH -A uppmax2025-3-3
 #SBATCH -M snowy
 #SBATCH -p core
-#SBATCH -n 4
-#SBATCH -J quast_hybrid_eval
+#SBATCH -n 8
+#SBATCH -J quast_pacbio_eval
 #SBATCH -t 02:00:00
 #SBATCH --mail-user=linus.edman.8474@student.uu.se
 #SBATCH --mail-type=ALL
 
 module load bioinfo-tools quast/5.0.2
 
-# === CONFIGURATION VARIABLES ===
-export ASSEMBLY_FILE=/home/edman/genomeAnalysis/data/assembly_data/hybrid/trim/contigs.fasta.gz
-export RESULT_DIR=/home/edman/genomeAnalysis/analyses/03_assembly_eval/hybrid/trim
+# CONFIGURATION VARIABLES
+export ASSEMBLY_FILE=/home/edman/genomeAnalysis/data/assembly_data/pacBio/run1/assembly.contigs.fasta.gz
+export RESULT_DIR=/home/edman/genomeAnalysis/analyses/03_assembly_eval/pacBio/run1
 mkdir -p "$RESULT_DIR"
 
 # Copying the input file to local temporary storage
@@ -31,6 +31,6 @@ gunzip -f "$ASSEMBLY_BASENAME"
 UNCOMPRESSED_ASSEMBLY="${ASSEMBLY_BASENAME%.gz}"
 
 # Running QUAST on the uncompressed assembly    
-quast.py "$UNCOMPRESSED_ASSEMBLY" -o "$RESULT_DIR" -t 4
+quast.py "$UNCOMPRESSED_ASSEMBLY" --pacbio /path/to/pacbio_reads.fastq.gz -o "$RESULT_DIR" -t 8
 
 

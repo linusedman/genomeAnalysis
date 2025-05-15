@@ -1,5 +1,5 @@
 #!/bin/bash
-#SBATCH -A uppmax2025-2-288
+#SBATCH -A uppmax2025-3-3
 #SBATCH -M snowy
 #SBATCH -p core
 #SBATCH -n 4
@@ -10,7 +10,7 @@
 
 module load bioinfo-tools prokka/1.45-5b58020
 
-# === CONFIGURATION VARIABLES ===
+# CONFIGURATION VARIABLES
 export ASSEMBLY_FILE=/home/edman/genomeAnalysis/data/assembly_data/pacBio/run2/assembly.contigs.fasta.gz
 export RESULT_DIR=/home/edman/genomeAnalysis/analyses/04_annotation/pacBio/run2
 mkdir -p "$RESULT_DIR"

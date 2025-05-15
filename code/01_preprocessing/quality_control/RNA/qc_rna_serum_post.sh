@@ -3,7 +3,7 @@
 #SBATCH -M snowy
 #SBATCH -p core
 #SBATCH -n 1
-#SBATCH -J fastqc_BH
+#SBATCH -J fastqc_serum
 #SBATCH -t 01:00:00
 #SBATCH --mail-user=linus.edman.8474@student.uu.se
 #SBATCH --mail-type=ALL
@@ -12,8 +12,8 @@
 module load bioinfo-tools FastQC/0.11.9
 
 # === CONFIGURATION VARIABLES ===
-export SRCDIR=/home/edman/genomeAnalysis/data/illumina/RNA/seq_BH
-export RESULT_DIR=/home/edman/genomeAnalysis/analyses/01_preprocessing/rna/pre_trim/BH
+export SRCDIR=/home/edman/genomeAnalysis/data/trimmed_data/rna/serum
+export RESULT_DIR=/home/edman/genomeAnalysis/analyses/01_preprocessing/rna/post_trim/serum
 mkdir -p "$RESULT_DIR"
 
 # Copying compressed FASTQ files to local temporary storage

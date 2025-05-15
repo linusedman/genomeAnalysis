@@ -1,5 +1,5 @@
 #!/bin/bash
-#SBATCH -A uppmax2025-2-288
+#SBATCH -A uppmax2025-3-3
 #SBATCH -M snowy
 #SBATCH -p core
 #SBATCH -n 1
@@ -8,10 +8,9 @@
 #SBATCH --mail-user=linus.edman.8474@student.uu.se
 #SBATCH --mail-type=ALL
 
-# Load BLAST+
 module load bioinfo-tools blast/2.15.0+
 
-# === CONFIGURATION VARIABLES ===
+# CONFIGURATION VARIABLES
 export QUERY_GZ=/home/edman/genomeAnalysis/data/assembly_data/pacBio/run2/assembly.contigs.fasta.gz
 export SUBJECT_GZ=/home/edman/genomeAnalysis/data/reference_data/GCA_001750885.1.fasta.gz
 export RESULT_DIR=/home/edman/genomeAnalysis/analyses/05_synteny_comparison/blast_output

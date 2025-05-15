@@ -1,5 +1,5 @@
 #!/bin/bash
-#SBATCH -A uppmax2025-2-288
+#SBATCH -A uppmax2025-3-3
 #SBATCH -M snowy
 #SBATCH -p core
 #SBATCH -n 1
@@ -13,7 +13,7 @@ module load bioinfo-tools FastQC/0.11.9
 
 # === CONFIGURATION VARIABLES ===
 export SRCDIR=/home/edman/genomeAnalysis/data/raw_data/illumina/RNA/seq_serum
-export RESULT_DIR=/home/edman/genomeAnalysis/analyses/01_preprocessing/rna/serum
+export RESULT_DIR=/home/edman/genomeAnalysis/analyses/01_preprocessing/rna/post_trim/serum
 mkdir -p "$RESULT_DIR"
 
 # Copying compressed FASTQ files to local temporary storage

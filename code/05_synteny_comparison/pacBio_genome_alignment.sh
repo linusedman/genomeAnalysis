@@ -1,5 +1,5 @@
 #!/bin/bash
-#SBATCH -A uppmax2025-2-288
+#SBATCH -A uppmax2025-3-3
 #SBATCH -M snowy
 #SBATCH -p core
 #SBATCH -n 4
@@ -10,7 +10,7 @@
 
 module load bioinfo-tools MUMmer/4.0.0rc1
 
-# === CONFIGURATION VARIABLES ===
+# CONFIGURATION VARIABLES
 export ASSEMBLY_FILE=/home/edman/genomeAnalysis/data/assembly_data/pacBio/run2/assembly.contigs.fasta.gz
 export REFERENCE_FILE=/home/edman/genomeAnalysis/data/reference_data/GCA_001750885.1.fasta.gz
 export RESULT_DIR=/home/edman/genomeAnalysis/analyses/05_synteny_comparison/pacBio/run2/mapping
@@ -33,7 +33,7 @@ REFERENCE_BASENAME=$(basename "$REFERENCE_FILE")
 gunzip -f "$REFERENCE_BASENAME"
 UNCOMPRESSED_REFERENCE="${REFERENCE_BASENAME%.gz}"
 
-# === RUN NUCmer ===
+# RUN NUCmer
 nucmer --prefix=assembly_vs_ref "$UNCOMPRESSED_REFERENCE" "$UNCOMPRESSED_ASSEMBLY"
 
 # Move output files (delta file etc.) back to result dir

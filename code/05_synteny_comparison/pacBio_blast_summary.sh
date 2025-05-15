@@ -1,5 +1,5 @@
 #!/bin/bash
-#SBATCH -A uppmax2025-2-288
+#SBATCH -A uppmax2025-3-3
 #SBATCH -M snowy
 #SBATCH -p core
 #SBATCH -n 1
@@ -8,7 +8,7 @@
 #SBATCH --mail-user=linus.edman.8474@student.uu.se
 #SBATCH --mail-type=ALL
 
-# === CONFIGURATION VARIABLES ===
+# CONFIGURATION VARIABLES
 export BLAST_OUTPUT=/home/edman/genomeAnalysis/analyses/05_synteny_comparison/blast_output/comparison.tab
 export RESULT_DIR=/home/edman/genomeAnalysis/analyses/05_synteny_comparison/blast_output
 mkdir -p "$RESULT_DIR"
@@ -44,6 +44,6 @@ END {
     }
 }' comparison.tab > contig_summary.tsv
 
-# Move summary back to result directory
+# Move to result directory
 mv contig_summary.tsv "$RESULT_DIR/"
 

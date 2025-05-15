@@ -1,5 +1,5 @@
 #!/bin/bash
-#SBATCH -A uppmax2025-2-288
+#SBATCH -A uppmax2025-3-3
 #SBATCH -M snowy
 #SBATCH -p core
 #SBATCH -n 8
@@ -8,14 +8,14 @@
 #SBATCH --mail-user=linus.edman.8474@student.uu.se
 #SBATCH --mail-type=ALL
 
-# === Load modules ===
+# Load modules
 module load bioinfo-tools spades/4.0.0
 
-# === CONFIGURATION VARIABLES ===
+# CONFIGURATION VARIABLES
 export SRCDIR_ILLUMINA=/home/edman/genomeAnalysis/data/trimmed_data/dna
 export SRCDIR_NANOPORE=/home/edman/genomeAnalysis/data/raw_data/nanopore
-export RESULT_DIR=/home/edman/genomeAnalysis/analyses/02_assembly/hybrid
-export FASTA_DEST=/home/edman/genomeAnalysis/data/assembly_data/hybrid
+export RESULT_DIR=/home/edman/genomeAnalysis/analyses/02_assembly/hybrid/trim
+export FASTA_DEST=/home/edman/genomeAnalysis/data/assembly_data/hybrid/trim
 
 # Copying input files to local temp storage
 cp $SRCDIR_ILLUMINA/*_paired.fq.gz $SNIC_TMP/
@@ -41,8 +41,6 @@ spades.py \
   -o spades_hybrid_output \
   -t 8 \
   -m 32
-
-# === Post-processing ===
 
 # Compress final contigs file
 gzip spades_hybrid_output/contigs.fasta

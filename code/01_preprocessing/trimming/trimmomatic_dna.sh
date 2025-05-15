@@ -1,5 +1,5 @@
 #!/bin/bash
-#SBATCH -A uppmax2025-2-288
+#SBATCH -A uppmax2025-3-3
 #SBATCH -M snowy
 #SBATCH -p core
 #SBATCH -n 4
@@ -11,12 +11,12 @@
 # Loading required modules
 module load bioinfo-tools trimmomatic/0.39
 
-# === CONFIGURATION VARIABLES ===
+# CONFIGURATION VARIABLES
 export SRCDIR=/home/edman/genomeAnalysis/data/raw_data/illumina
 export RESULT_DIR=/home/edman/genomeAnalysis/data/trimmed_data/dna
 export LOG_DIR=/home/edman/genomeAnalysis/analyses/01_preprocessing/dna/illumina/trim
 
-# Creating the destination directory if it doesn't exist
+# Creating the destination directories
 mkdir -p "$RESULT_DIR"
 mkdir -p "$LOG_DIR"
 

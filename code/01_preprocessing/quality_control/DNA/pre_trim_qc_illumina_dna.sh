@@ -1,5 +1,5 @@
 #!/bin/bash
-#SBATCH -A uppmax2025-2-288
+#SBATCH -A uppmax2025-3-3
 #SBATCH -M snowy
 #SBATCH -p core
 #SBATCH -n 1
@@ -13,7 +13,7 @@ module load bioinfo-tools FastQC/0.11.9
 
 # === CONFIGURATION VARIABLES ===
 export SRCDIR=/home/edman/genomeAnalysis/data/raw_data/illumina
-export RESULT_DIR=/home/edman/genomeAnalysis/analyses/01_preprocessing/dna/illumina
+export RESULT_DIR=/home/edman/genomeAnalysis/analyses/01_preprocessing/dna/illumina/pre_trim
 
 # Creating destination directory (if it doesn't exist)
 mkdir -p "$RESULT_DIR"

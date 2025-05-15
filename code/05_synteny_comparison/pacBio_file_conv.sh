@@ -1,5 +1,5 @@
 #!/bin/bash
-#SBATCH -A uppmax2025-2-288
+#SBATCH -A uppmax2025-3-3
 #SBATCH -M snowy
 #SBATCH -p core
 #SBATCH -n 1
@@ -10,7 +10,7 @@
 
 module load bioinfo-tools MUMmer/4.0.0rc1
 
-# === CONFIGURATION VARIABLES ===
+# CONFIGURATION VARIABLES
 export DELTA_FILE=/home/edman/genomeAnalysis/analyses/05_synteny_comparison/pacBio/run2/mapping/assembly_vs_ref.delta
 export RESULT_DIR=/home/edman/genomeAnalysis/analyses/05_synteny_comparison/pacBio/run2/mapping
 mkdir -p "$RESULT_DIR"
@@ -21,9 +21,9 @@ cd "$SNIC_TMP" || exit 1
 
 DELTA_BASENAME=$(basename "$DELTA_FILE")
 
-# === Run show-coords ===
+# Run show-coords
 show-coords -rcl "$DELTA_BASENAME" > comparison.coords
 
-# === Move output file back ===
+# Move output file to result dir
 mv comparison.coords "$RESULT_DIR/"
 

@@ -1,5 +1,5 @@
 #!/bin/bash
-#SBATCH -A uppmax2025-2-288
+#SBATCH -A uppmax2025-3-3
 #SBATCH -M snowy
 #SBATCH -p core
 #SBATCH -n 16
@@ -12,7 +12,7 @@
 module load bioinfo-tools
 module load canu/2.2
 
-# === CONFIGURATION VARIABLES ===
+# CONFIGURATION VARIABLES
 export SRCDIR=/home/edman/genomeAnalysis/data/raw_data/pacBio
 export RESULT_DIR=/home/edman/genomeAnalysis/analyses/02_assembly/pacBio/run2
 export FASTA_DEST=/home/edman/genomeAnalysis/data/assembly_data/pacBio/run2
@@ -20,7 +20,7 @@ export FASTA_DEST=/home/edman/genomeAnalysis/data/assembly_data/pacBio/run2
 # Copying input files (fastq.gz) to local temp storage
 cp $SRCDIR/*.fastq.gz $SNIC_TMP/
 
-# Moving to the local temp directory (exit if failed)
+# Moving to the local temp directory
 cd $SNIC_TMP || exit 1
 
 # Unziping fastq.gz files
@@ -28,8 +28,6 @@ gunzip *.fastq.gz
 
 # Running Canu
 canu -p assembly -d canu_run genomeSize=3.1m -pacbio *.fastq useGrid=false maxThreads=16
-
-# === Post-processing ===
 
 # Compressing any uncompressed FASTA files from the Canu run
 for f in canu_run/*.fasta; do
