@@ -14,8 +14,8 @@ module load bioinfo-tools spades/4.0.0
 # CONFIGURATION VARIABLES
 export SRCDIR_ILLUMINA=/home/edman/genomeAnalysis/data/trimmed_data/dna
 export SRCDIR_NANOPORE=/home/edman/genomeAnalysis/data/raw_data/nanopore
-export RESULT_DIR=/home/edman/genomeAnalysis/analyses/02_assembly/hybrid/no_trim
-export FASTA_DEST=/home/edman/genomeAnalysis/data/assembly_data/hybrid/no_trim
+export RESULT_DIR=/home/edman/genomeAnalysis/analyses/02_assembly/hybrid
+export FASTA_DEST=/home/edman/genomeAnalysis/data/assembly_data/hybrid
 
 # Copying input files to local temp storage
 cp $SRCDIR_ILLUMINA/*_clean.fq.gz $SNIC_TMP/

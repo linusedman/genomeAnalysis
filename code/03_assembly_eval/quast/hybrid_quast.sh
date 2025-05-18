@@ -11,8 +11,8 @@
 module load bioinfo-tools quast/5.0.2
 
 # CONFIGURATION VARIABLES
-export ASSEMBLY_FILE=/home/edman/genomeAnalysis/data/assembly_data/hybrid/no_trim/contigs.fasta.gz
-export RESULT_DIR=/home/edman/genomeAnalysis/analyses/03_assembly_eval/hybrid/no_trim/quast
+export ASSEMBLY_FILE=/home/edman/genomeAnalysis/data/assembly_data/hybrid/contigs.fasta.gz
+export RESULT_DIR=/home/edman/genomeAnalysis/analyses/03_assembly_eval/hybrid/quast
 mkdir -p "$RESULT_DIR"
 
 # Copying the input file to local temporary storage

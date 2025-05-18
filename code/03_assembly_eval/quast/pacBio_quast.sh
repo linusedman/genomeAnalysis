@@ -11,8 +11,8 @@
 module load bioinfo-tools quast/5.0.2
 
 # CONFIGURATION VARIABLES
-export ASSEMBLY_FILE=/home/edman/genomeAnalysis/data/assembly_data/pacBio/run2/assembly.contigs.fasta.gz
-export RESULT_DIR=/home/edman/genomeAnalysis/analyses/03_assembly_eval/pacBio/run2/quast
+export ASSEMBLY_FILE=/home/edman/genomeAnalysis/data/assembly_data/pacBio/assembly.contigs.fasta.gz
+export RESULT_DIR=/home/edman/genomeAnalysis/analyses/03_assembly_eval/pacBio/quast
 mkdir -p "$RESULT_DIR"
 
 # Define the directory containing PacBio reads

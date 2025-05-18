@@ -4,7 +4,7 @@
 #SBATCH -p core
 #SBATCH -n 16
 #SBATCH -t 20:00:00
-#SBATCH -J busco_hybrid_eval
+#SBATCH -J busco_pacbio_eval
 #SBATCH --mail-user=linus.edman.8474@student.uu.se
 #SBATCH --mail-type=ALL
 
@@ -15,8 +15,8 @@ module load bioinfo-tools BUSCO/5.7.1
 source $AUGUSTUS_CONFIG_COPY
 
 # Define paths
-ASSEMBLY_FILE=/home/edman/genomeAnalysis/data/assembly_data/hybrid/no_trim/contigs.fasta.gz
-RESULT_DIR=/home/edman/genomeAnalysis/analyses/03_assembly_eval/hybrid/no_trim/busco
+ASSEMBLY_FILE=/home/edman/genomeAnalysis/data/assembly_data/pacBio/assembly.contigs.fasta.gz
+RESULT_DIR=/home/edman/genomeAnalysis/analyses/03_assembly_eval/pacBio/busco
 LINEAGE=$BUSCO_LINEAGE_SETS/lactobacillales_odb10
 
 # Prepare output and temp dirs

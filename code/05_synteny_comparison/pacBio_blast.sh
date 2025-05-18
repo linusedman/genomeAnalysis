@@ -11,7 +11,7 @@
 module load bioinfo-tools blast/2.15.0+
 
 # CONFIGURATION VARIABLES
-export QUERY_GZ=/home/edman/genomeAnalysis/data/assembly_data/pacBio/run2/assembly.contigs.fasta.gz
+export QUERY_GZ=/home/edman/genomeAnalysis/data/assembly_data/pacBio/assembly.contigs.fasta.gz
 export SUBJECT_GZ=/home/edman/genomeAnalysis/data/reference_data/GCA_001750885.1.fasta.gz
 export RESULT_DIR=/home/edman/genomeAnalysis/analyses/05_synteny_comparison/blast_output
 mkdir -p "$RESULT_DIR"

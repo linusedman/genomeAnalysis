@@ -12,7 +12,7 @@ module load bioinfo-tools htseq/2.0.2 samtools
 
 # CONFIGURATION VARIABLES
 BAM_DIR=/home/edman/genomeAnalysis/analyses/06_post_mapping/serum
-GFF_ORIG=/home/edman/genomeAnalysis/analyses/04_annotation/pacBio/run2/pacbio.gff
+GFF_ORIG=/home/edman/genomeAnalysis/analyses/04_annotation/pacBio/pacbio.gff
 OUT_DIR=/home/edman/genomeAnalysis/analyses/07_diff_exp_analysis/read_counting/serum
 mkdir -p "$OUT_DIR"
 

@@ -11,7 +11,7 @@
 module load bioinfo-tools bwa/0.7.18 samtools/1.20
 
 # CONFIGURATION VARIABLES
-ASSEMBLY_GZ=/home/edman/genomeAnalysis/data/assembly_data/pacBio/run2/assembly.contigs.fasta.gz
+ASSEMBLY_GZ=/home/edman/genomeAnalysis/data/assembly_data/pacBio/assembly.contigs.fasta.gz
 READS_DIR=/home/edman/genomeAnalysis/data/raw_data/illumina/RNA/seq_serum
 OUT_DIR=/home/edman/genomeAnalysis/analyses/06_post_mapping/serum
 mkdir -p "$OUT_DIR"

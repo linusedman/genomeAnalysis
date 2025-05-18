@@ -14,8 +14,8 @@ module load canu/2.2
 
 # CONFIGURATION VARIABLES
 export SRCDIR=/home/edman/genomeAnalysis/data/raw_data/pacBio
-export RESULT_DIR=/home/edman/genomeAnalysis/analyses/02_assembly/pacBio/run2
-export FASTA_DEST=/home/edman/genomeAnalysis/data/assembly_data/pacBio/run2
+export RESULT_DIR=/home/edman/genomeAnalysis/analyses/02_assembly/pacBio
+export FASTA_DEST=/home/edman/genomeAnalysis/data/assembly_data/pacBio
 
 # Copying input files (fastq.gz) to local temp storage
 cp $SRCDIR/*.fastq.gz $SNIC_TMP/

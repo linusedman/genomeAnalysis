@@ -11,8 +11,8 @@
 module load bioinfo-tools prokka/1.45-5b58020
 
 # CONFIGURATION VARIABLES
-export ASSEMBLY_FILE=/home/edman/genomeAnalysis/data/assembly_data/pacBio/run2/assembly.contigs.fasta.gz
-export RESULT_DIR=/home/edman/genomeAnalysis/analyses/04_annotation/pacBio/run2
+export ASSEMBLY_FILE=/home/edman/genomeAnalysis/data/assembly_data/pacBio/assembly.contigs.fasta.gz
+export RESULT_DIR=/home/edman/genomeAnalysis/analyses/04_annotation/pacBio
 mkdir -p "$RESULT_DIR"
 
 # Copy the compressed assembly file to local temporary storage
